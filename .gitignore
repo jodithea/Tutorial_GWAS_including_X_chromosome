@@ -1,0 +1,41 @@
+# Ignore notes to myself file
+Jodi_notes.txt
+
+
+### GENOTPE DATA ###
+
+# Ignore everything inside 01_Genotype_Data/
+01_Genotype_Data/*
+
+# BUT keep README.md
+!01_Genotype_Data/README.md
+
+
+### QC ###
+
+# Ignore everything inside 02_QC/
+02_QC/*
+
+# BUT keep all .sh scripts and .md files
+!02_QC/*.sh
+!02_QC/*.md
+
+
+### Imputation ###
+
+# Ignore everything inside 03_Imputation/
+03_Imputation/*
+
+# BUT keep all .sh scripts and .md files
+!03_Imputation/*.sh
+!03_Imputation/*.md
+
+
+### Ancestry Checks ###
+
+# Ignore everything inside 04_Ancestry_Checks/
+04_Ancestry_Checks/*
+
+# BUT keep all .sh scripts and .md files
+!04_Ancestry_Checks/*.sh
+!04_Ancestry_Checks/*.md
