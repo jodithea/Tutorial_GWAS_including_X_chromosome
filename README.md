@@ -69,7 +69,9 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 #SBATCH --mem=1GB
 #SBATCH --cpus-per-task=1
 ```
+
 	 - To do this replacement, in your local clone of the repository, open the script with an editor, for example:
+
 ```bash
 nano 01_Split_X_chromosome.sh
 ```
@@ -143,6 +145,7 @@ qstat -u your_username
 ```
 
 	- For SLURM, using squeue
+
 ```bash
 squeue -u your_username
 ```
