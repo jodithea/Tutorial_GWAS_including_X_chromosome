@@ -28,7 +28,7 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 * For this tutorial you will need the following software
 	- Plink v1.9
 	- R (v4.5.0 is used in this tutorial)
-		- Make sure the R package 'tidyverse' in installed
+		- Make sure the R package 'tidyverse' is installed
 	- vcftools (v0.1.16 used in this tutorial)
 	- bcftools (v1.22 used in this tutorial)
 
@@ -68,4 +68,81 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 #SBATCH --time=00:10:00
 #SBATCH --mem=1GB
 #SBATCH --cpus-per-task=1
+```
+	 - To do this replacement, in your local clone of the repository, open the script with an editor, for example:
+```bash
+nano 01_Split_X_chromosome.sh
+```
+
+    - Then edit the scheduler directives in the file as needed
+
+2. Script Description
+
+	- A short comment explaining what the script does:
+```bash
+# This script ...
+```
+
+3. Environment
+	- Load any required modules or software:
+```bash
+### Environment ###
+module load plink/1.90b7
+```
+
+4. Preamble / User Variables
+
+	- This section defines any directories, file paths, or parameters used in the script
+	- You need to edit this section of the script as appropriate
+	- For example, in each script the 'directory' variable is defined. Open the script using 'nano' (or a similar editor) and set the path to the location of where your local clone of the repository is
+
+```bash
+### Preamble ###
+# Update to point to the location where you are doing this tutorial
+directory=/path/Tutorial_GWAS_including_X_chromosome/
+```
+
+5. Commands / Submission Section
+
+	- Actual commands that perform the work
+	- For example:
+
+```bash
+### Submit script ###
+cd ${directory}
+
+# Split chromosome X
+plink --bfile 01_Genotype_Data/Genotypes_chrX \
+      --split-x b37 \
+      --make-bed \
+      --out 01_Genotype_Data/Genotypes_chrX_split
+```
+
+### Submitting scripts
+
+* After viewing the script and making any edits as appropriate, submit the script
+* If you are using PBS, submit using qsub, e.g.:
+
+```bash
+qsub 01_Split_X_chromosome.sh
+
+```
+
+* If you are using SLURM (and have edited the scheduler directives appropriately), submit using sbatch, e.g.:
+
+```bash
+sbatch 01_Split_X_chromosome.sh
+
+```
+
+* You can check the status of your jobs:
+
+	- For PBS, using qstat
+```bash
+qstat -u your_username
+```
+
+	- For SLURM, using squeue
+```bash
+squeue -u your_username
 ```
