@@ -86,7 +86,8 @@ Then edit the scheduler directives in the file as needed
 ```
 
 3. Environment
-	- Load any required modules or software:
+
+	- This section loads any required modules or software:
 ```bash
 ### Environment ###
 module load plink/1.90b7
@@ -106,7 +107,7 @@ directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 5. Commands / Submission Section
 
-	- Actual commands that perform the work
+	- This section contains the actual commands that perform the work
 	- For example:
 
 ```bash
@@ -153,7 +154,11 @@ squeue -u your_username
 
 ### Job Arrays (PBS vs SLURM)
 
-* Some scripts in this tutorial use job arrays, for example running one job per chromosome
+* Some scripts in this tutorial use job arrays, one job per chromosome:
+	- 03_Imputation/04_Convert_and_filter_imputed_genotype_data.sh
+	- 04_Ancestry_Checks/02_Tidy_1000G_data.sh
+	- 04_Ancestry_Checks/03_Merge_1000G_with_tutorial_data_and_prune.sh
+
 * The scripts are written using PBS job scheduling
 
 #### PBS job arrays
@@ -185,7 +190,7 @@ chr=$(basename "${files[$PBS_ARRAY_INDEX]}" .zip)
 
 * If your HPC system uses SLURM, you must modify these scripts
 
-* Replace the PBS array directive with:
+*  Open the script using 'nano' (or a similar editor) and replace the PBS array directive with:
 
 ```bash
 #!/bin/bash
