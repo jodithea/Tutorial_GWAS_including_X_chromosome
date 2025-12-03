@@ -139,12 +139,12 @@ sbatch 01_Split_X_chromosome.sh
 
 * You can check the status of your jobs:
 
-	- For PBS, using qstat
+For PBS, using qstat:
 ```bash
 qstat -u your_username
 ```
 
-	- For SLURM, using squeue
+For SLURM, using squeue:
 
 ```bash
 squeue -u your_username
