@@ -61,14 +61,14 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 #PBS -l ncpus=1
 ```
 
-	- If you use SLURM instead of PBS, you can replace these lines with SLURM directives, for example:
+If you use SLURM instead of PBS, you can replace these lines with SLURM directives, for example:
 
-    ```bash
-    #!/bin/bash
-    #SBATCH --time=00:10:00
-    #SBATCH --mem=1GB
-    #SBATCH --cpus-per-task=1
-    ```
+```bash
+#!/bin/bash
+#SBATCH --time=00:10:00
+#SBATCH --mem=1GB
+#SBATCH --cpus-per-task=1
+```
 
 To do this replacement, in your local clone of the repository, open the script with an editor, for example:
 
@@ -149,4 +149,59 @@ For SLURM, using squeue:
 
 ```bash
 squeue -u your_username
+```
+
+### Job Arrays (PBS vs SLURM)
+
+* Some scripts in this tutorial use job arrays, for example running one job per chromosome
+* The scripts are written using PBS job scheduling
+
+#### PBS job arrays
+
+* The PBS scheduler directive uses `#PBS -J` to define the range of array jobs:
+
+```bash
+#!/bin/bash
+#PBS -l walltime=01:00:00
+#PBS -l mem=80GB
+#PBS -l ncpus=1
+#PBS -J 1-22
+```
+
+* Within the script, the array index for the current task is accessed using PBS_ARRAY_INDEX, for example:
+
+```bash
+chr=${PBS_ARRAY_INDEX}
+```
+
+* Another example from this tutorial:
+
+```bash
+files=(${directory}03_Imputation/Genotype_imputation_results/chr_*.zip)
+chr=$(basename "${files[$PBS_ARRAY_INDEX]}" .zip)
+```
+
+#### SLURM job arrays
+
+* If your HPC system uses SLURM, you must modify these scripts
+
+* Replace the PBS array directive with:
+
+```bash
+#!/bin/bash
+#SBATCH --time=01:00:00
+#SBATCH --mem=80GB
+#SBATCH --cpus-per-task=1
+#SBATCH --array=1-22
+```
+
+* And inside the script replace PBS_ARRAY_INDEX with the SLURM equivalent:
+
+```bash
+chr=${SLURM_ARRAY_TASK_ID}
+```
+
+```bash
+files=(${directory}03_Imputation/Genotype_imputation_results/chr_*.zip)
+chr=$(basename "${files[$SLURM_ARRAY_TASK_ID]}" .zip)
 ```
