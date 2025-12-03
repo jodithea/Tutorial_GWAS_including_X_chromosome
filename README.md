@@ -61,14 +61,14 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 #PBS -l ncpus=1
 ```
 
-If you use SLURM instead of PBS, you can replace these lines with SLURM directives, for example:
+	- If you use SLURM instead of PBS, you can replace these lines with SLURM directives, for example:
 
-```bash
-#!/bin/bash
-#SBATCH --time=00:10:00
-#SBATCH --mem=1GB
-#SBATCH --cpus-per-task=1
-```
+    ```bash
+    #!/bin/bash
+    #SBATCH --time=00:10:00
+    #SBATCH --mem=1GB
+    #SBATCH --cpus-per-task=1
+    ```
 
 To do this replacement, in your local clone of the repository, open the script with an editor, for example:
 
