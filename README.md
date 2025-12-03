@@ -61,7 +61,7 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 #PBS -l ncpus=1
 ```
 
-	- If you use SLURM instead of PBS, you can replace these lines with SLURM directives, for example:
+If you use SLURM instead of PBS, you can replace these lines with SLURM directives, for example:
 
 ```bash
 #!/bin/bash
@@ -70,13 +70,13 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 #SBATCH --cpus-per-task=1
 ```
 
-	 - To do this replacement, in your local clone of the repository, open the script with an editor, for example:
+To do this replacement, in your local clone of the repository, open the script with an editor, for example:
 
 ```bash
 nano 01_Split_X_chromosome.sh
 ```
 
-    - Then edit the scheduler directives in the file as needed
+Then edit the scheduler directives in the file as needed
 
 2. Script Description
 
@@ -123,14 +123,15 @@ plink --bfile 01_Genotype_Data/Genotypes_chrX \
 ### Submitting scripts
 
 * After viewing the script and making any edits as appropriate, submit the script
-* If you are using PBS, submit using qsub, e.g.:
+
+For PBS, submit using qsub, e.g.:
 
 ```bash
 qsub 01_Split_X_chromosome.sh
 
 ```
 
-* If you are using SLURM (and have edited the scheduler directives appropriately), submit using sbatch, e.g.:
+For SLURM (and after you have edited the scheduler directives appropriately), submit using sbatch, e.g.:
 
 ```bash
 sbatch 01_Split_X_chromosome.sh
