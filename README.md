@@ -28,8 +28,9 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 * For this tutorial you will need the following software
 	- Plink v1.9
 	- R (v4.5.0 is used in this tutorial)
-		- Make sure the following R packages ar eisntalled: 'tidyverse' and ''
+		- Make sure the R package 'tidyverse' in installed
 	- vcftools (v0.1.16 used in this tutorial)
+	- bcftools (v1.22 used in this tutorial)
 
 ## How to use this tutorial
 
@@ -51,8 +52,8 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 * All scripts in this repository follow a similar layout:
 
 1. Shebang and Scheduler Header
-	Every script starts with a shebang (#!/bin/bash) to indicate it is a bash script, followed by HPC scheduler directives. 
-	The schedular directives are written for PBS, for example:
+	- Every script starts with a shebang (#!/bin/bash) to indicate it is a bash script, followed by HPC scheduler directives. 
+	- The schedular directives are written for PBS, for example:
 ```bash
 #!/bin/bash
 #PBS -l walltime=00:10:00
@@ -60,11 +61,11 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 #PBS -l ncpus=1
 ```
 
-If you use SLURM instead of PBS, you can replace these lines with SLURM directives, for example:
+	- If you use SLURM instead of PBS, you can replace these lines with SLURM directives, for example:
 
 ```bash
 #!/bin/bash
 #SBATCH --time=00:10:00
 #SBATCH --mem=1GB
-#SBATCH -c 1
+#SBATCH --cpus-per-task=1
 ```
