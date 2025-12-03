@@ -7,8 +7,8 @@ Jodi_notes.txt
 # Ignore everything inside 01_Genotype_Data/
 01_Genotype_Data/*
 
-# BUT keep README.md
-!01_Genotype_Data/README.md
+# BUT keep 01_Download_genotype_data_for_tutorial.md
+!01_Genotype_Data/01_Download_genotype_data_for_tutorial.md
 
 
 ### QC ###
