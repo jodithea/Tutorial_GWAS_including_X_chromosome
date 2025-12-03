@@ -19,3 +19,52 @@
 ```bash
 git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 ```
+
+* You will now have a copy of all of the directories and files from this tutorial
+
+
+## Software needed
+
+* For this tutorial you will need the following software
+	- Plink v1.9
+	- R (v4.5.0 is used in this tutorial)
+		- Make sure the following R packages ar eisntalled: 'tidyverse' and ''
+	- vcftools (v0.1.16 used in this tutorial)
+
+## How to use this tutorial
+
+* Follow through the directories and files in chronological order
+
+### Markdown files
+
+* Markdown files (files ending with .md) contain instructions and documentation
+* You can view these files directly in the GitHub web interface
+* Or, if you have a local clone of the repository, you can view them in the terminal using cat, e.g.:
+```bash
+ cat README.md
+```
+
+### Scripts
+
+* Scripts (i.e. files ending with '.sh') are shell scripts that can be submitted to your HPC environment
+* Again you can view these files directly in the GitHub web interface or in your local clone of the repository by using cat
+* All scripts in this repository follow a similar layout:
+
+1. Shebang and Scheduler Header
+	Every script starts with a shebang (#!/bin/bash) to indicate it is a bash script, followed by HPC scheduler directives. 
+	The schedular directives are written for PBS, for example:
+```bash
+#!/bin/bash
+#PBS -l walltime=00:10:00
+#PBS -l mem=1GB
+#PBS -l ncpus=1
+```
+
+If you use SLURM instead of PBS, you can replace these lines with SLURM directives, for example:
+
+```bash
+#!/bin/bash
+#SBATCH --time=00:10:00
+#SBATCH --mem=1GB
+#SBATCH -c 1
+```
