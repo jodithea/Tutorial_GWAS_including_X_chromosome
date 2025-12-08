@@ -13,7 +13,8 @@ directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 cd ${directory}01_Genotype_Data
 
-wget https://zenodo.org/records/17796418/files/tutorial_genotype_data.zip?download=1/tutorial_genotype_data.zip -O tutorial_genotype_data.zip
+wget https://zenodo.org/records/17796418/files/tutorial_genotype_data.zip?download=1/tutorial_genotype_data.zip \
+  -O tutorial_genotype_data.zip
 
 # Extract files from zip
 unzip tutorial_genotype_data.zip
