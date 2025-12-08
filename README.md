@@ -31,6 +31,7 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 		- Make sure the R package 'tidyverse' is installed
 	- vcftools (v0.1.16 used in this tutorial)
 	- bcftools (v1.22 used in this tutorial)
+	- GCTA (v1.94.1 used in this tutorial)
 
 ## How to use this tutorial
 
@@ -52,7 +53,7 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 * All scripts in this repository follow a similar layout:
 
 1. Shebang and Scheduler Header
-	- Every script starts with a shebang (#!/bin/bash) to indicate it is a bash script, followed by HPC scheduler directives. 
+	- Every script starts with a shebang (#!/bin/bash) to indicate it is a bash script, followed by HPC scheduler directives
 	- The schedular directives are written for PBS, for example:
 ```bash
 #!/bin/bash
@@ -80,14 +81,14 @@ Then edit the scheduler directives in the file as needed
 
 2. Script Description
 
-	- A short comment explaining what the script does:
+	- A short comment explaining what the script does, for example:
 ```bash
-# This script ...
+# This script splits the X chromosome into non-pseudoautosomal region (nPAR) (coded as CHR 23) and pseudoautosomal region (PAR) (coded as CHR 25)
 ```
 
 3. Environment
 
-	- This section loads any required modules or software:
+	- This section loads any required modules or software, for example:
 ```bash
 ### Environment ###
 module load plink/1.90b7
@@ -163,7 +164,7 @@ squeue -u your_username
 
 #### PBS job arrays
 
-* The PBS scheduler directive uses `#PBS -J` to define the range of array jobs:
+* The PBS scheduler directive uses `#PBS -J` to define the range of array jobs, for example:
 
 ```bash
 #!/bin/bash
