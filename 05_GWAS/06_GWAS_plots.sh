@@ -13,7 +13,7 @@ module load R/4.5.0
 ### Preamble ###
 
 # Update to point to location where you are doing this tutorial
-directory=/mnt/backedup/home/jodiT/Working/Tutorial_GWAS_including_X_chromosome/
+directory=/path/Tutorial_GWAS_including_X_chromosome/
 # p-value threshold for GWAS (where horizontal line will be placedon manhattan plot)
 p_threshold=5e-08
 # name of your input GWAS summary statistics file

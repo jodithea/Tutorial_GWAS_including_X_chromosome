@@ -17,7 +17,7 @@ module load GCTA/1.94.1
 ### Preamble ###
 
 # Update to point to location where you are doing this tutorial
-directory=/mnt/backedup/home/jodiT/Working/Tutorial_GWAS_including_X_chromosome/
+directory=/path/Tutorial_GWAS_including_X_chromosome/
 # Add filename including the list of individuals within your ancestry of interes, as created in 04_Ancestry_Checks
 list_ancestry_individuals=04_Ancestry_Checks/PCA_data/EUR_IDs_3SD.txt
 

@@ -11,7 +11,7 @@
 ### Preamble ###
 
 # Update to point to location where you are doing this tutorial
-directory=/mnt/backedup/home/jodiT/Working/Tutorial_GWAS_including_X_chromosome/
+directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 ### Submit script ###
 

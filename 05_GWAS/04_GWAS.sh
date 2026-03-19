@@ -16,7 +16,7 @@ module load GCTA/1.94.1
 ### Preamble ###
 
 # Update to point to location where you are doing this tutorial
-directory=/mnt/backedup/home/jodiT/Working/Tutorial_GWAS_including_X_chromosome/
+directory=/path/Tutorial_GWAS_including_X_chromosome/
 # Sparse GRM file
 sparseGRM=Sparse_GRM_autosomes
 # Add filename including the list of individuals within your ancestry of interest, as created in 04_Ancestry_Checks with the standard devidation threshold chosen
