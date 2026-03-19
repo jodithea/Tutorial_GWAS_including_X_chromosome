@@ -6,6 +6,7 @@
 
 # This script merges our tutorial genotype data with the 1000 Genomes reference genotype data
 # Autosomes only as this is what we'll use to look at ancestry
+# Using out genotype data after QC but before imputation
 
 ### Environment ###
 

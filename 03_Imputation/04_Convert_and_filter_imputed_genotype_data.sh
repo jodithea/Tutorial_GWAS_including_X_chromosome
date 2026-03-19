@@ -40,13 +40,13 @@ bcftools annotate \
 
 # 3) Convert .dose.vcf.gz files to Plink bed/bim/fam files
 # Add sex data
-# For X chromosome only: Split X into nPAR and PAR
 if [[ "$chr_num" == "X" ]]; then
     plink --vcf chr${chr_num}_renamed.vcf.gz \
           --update-sex sex_data.txt \
           --split-x b37 \
           --make-bed \
           --out chr${chr_num}_renamed
+
 else
     plink --vcf chr${chr_num}_renamed.vcf.gz \
           --update-sex sex_data.txt \
@@ -74,9 +74,33 @@ zcat chr${chr_num}.info.gz \
 }' > chr${chr_num}_info.txt
 
 # 5) Filter genotype data based on MAF > 0.01 and imputation quality scores in chr${chr}_info.txt file, Rsq>0.8.
-plink --bfile chr${chr_num}_renamed \
- --qual-scores chr${chr_num}_info.txt 2 1 \
- --qual-threshold 0.8 \
- --maf 0.01 \
- --make-bed \
- --out chr${chr_num}_filtered
+# For X chr create separate PLINK file sets for X chr nPAR and X chr PAR
+if [[ "$chr_num" == "X" ]]; then
+    plink --bfile chr${chr_num}_renamed \
+      --qual-scores chr${chr_num}_info.txt 2 1 \
+      --qual-threshold 0.8 \
+      --maf 0.01 \
+      --make-bed \
+      --out chr${chr_num}_filtered
+
+   # Extract nPAR only (CHR 23)
+    plink --bfile chr${chr_num}_filtered \
+          --chr 23 \
+          --make-bed \
+          --out chr${chr_num}_nPAR_filtered
+
+    # Extract PAR only (CHR 25)
+    plink --bfile chr${chr_num}_filtered \
+          --chr 25 \
+          --make-bed \
+          --out chr${chr_num}_PAR_filtered
+
+else
+    plink --bfile chr${chr_num}_renamed \
+     --qual-scores chr${chr_num}_info.txt 2 1 \
+     --qual-threshold 0.8 \
+     --maf 0.01 \
+     --make-bed \
+     --out chr${chr_num}_filtered
+fi 
+

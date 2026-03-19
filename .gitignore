@@ -11,6 +11,12 @@ Jodi_notes.txt
 !01_Genotype_Data/01_Download_genotype_data_for_tutorial.md
 
 
+### PHENOTYPE DATA ###
+
+# Ignore everything in 01_Phenotype_Data/Making_phenotype_data/
+01_Phenotype_Data/Making_phenotype_data/
+
+
 ### QC ###
 
 # Ignore everything inside 02_QC/
@@ -39,3 +45,15 @@ Jodi_notes.txt
 # BUT keep all .sh scripts and .md files
 !04_Ancestry_Checks/*.sh
 !04_Ancestry_Checks/*.md
+
+
+### GWAS ###
+
+# Ignore everything inside 05_GWAS/
+
+05_GWAS/*
+
+# # BUT keep all .sh scripts and .md files and .R scripts
+!05_GWAS/*.sh
+!05_GWAS/*.md
+!05_GWAS/*.R

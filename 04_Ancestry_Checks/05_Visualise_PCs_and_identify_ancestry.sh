@@ -25,9 +25,9 @@ module load R/4.5.0
 directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 # Choose threshold to use to remove ancestry outliers, in standard deviations
-# Here we are using 3SD as a common threshold
 # Look at the plots produced from this script - if this doesn't look like a good threshold update (e.g. change to threshold=4) and re-run the script until you find a threshold that looks good
-threshold=3
+# Here, I ran the script with the threshold of 3, 4, 5, and 6 and decided to use a threshold of 5SD
+threshold=5
 
 ### Submit script ###
 
@@ -46,7 +46,7 @@ threshold <- as.numeric(Sys.getenv("threshold"))
 
 
 # Load data
-pca <- read.table(file.path(dir, "04_Ancestry_Checks/Merged_study_and_1000G/Genotypes_study_and_1000G_autosomes_filtered_pca.eigenvec"), header = FALSE)
+pca <- read.table(file.path(dir, "04_Ancestry_Checks/PCA_data/Genotypes_study_and_1000G_autosomes_filtered_pca.eigenvec"), header = FALSE)
 colnames(pca) <- c("FID", "IID", paste0("PC", 1:20))
 
 sample_info_1000G <- read.table(file.path(dir, "04_Ancestry_Checks/1000G_data/integrated_call_samples_v3.20130502.ALL.panel"), header = TRUE)
@@ -153,7 +153,7 @@ EUR_IDs <- df %>%
 
 # Save list
 write.table(EUR_IDs,
-            file = paste0(dir, "04_Ancestry_Checks/EUR_IDs_", threshold, "SD.txt"),
+            file = paste0(dir, "04_Ancestry_Checks/PCA_data/EUR_IDs_", threshold, "SD.txt"),
             col.names = TRUE,
             row.names = FALSE,
             quote = FALSE,
