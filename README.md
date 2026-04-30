@@ -1,11 +1,14 @@
 # Tutorial to run GWAS including the X chromosome
 
-* This tutorial will cover the following steps, all including the autosomes and the **X chromosome**:
+* The aim of this tutorial is to provide step-by-step instructions and scripts for performing a genome-wide association study (GWAS), starting from genotype data through to identifying the number of independent genome-wide significant SNPs.
+* This tutorial covers the following steps, applied to both the autosomes and the **X chromosome**:
 	- Quality control of genotype data
 	- Imputation of genotype data
 	- Genome-wide association study (GWAS)
-* Genotype data is provided to use with this tutorial, or you can run through it using your own genotype data
+	- Clumping to identify independent genome-wide significant SNPs
+* Example genotype data is provided to use with this tutorial, or you can follow the workflow using your own genotype data
 
+**Note: This repository is a work in progress. All core content is available, but I am currently refining and reorganinsing the tutorial, and developing a summary flow diagram.**
 
 # Getting Started
 

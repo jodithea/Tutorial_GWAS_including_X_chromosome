@@ -1,6 +1,8 @@
-# Download the 1000 Genomes Phase 3 autosomal genotype data 
+# Download the 1000 Genomes Phase 3 genotype data 
 
-To be used to calculate ancestry PCs and filter ancestry outiers  
+The autosomal genotype data will be used to calculate ancestry PCs and filter ancestry outiers  
+
+The autosomal + X chromosome data will be used to carry out clumping in PLINK
 
 * On most HPC clusters the compute nodes have no outbound internet access so downloading these files within an interactive session or with a script will fail to find these files
 * Instead download the files in the login node, where internet is allowed
@@ -23,6 +25,10 @@ for chr in {1..22}; do
   wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr${chr}.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz
   wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr${chr}.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz.tbi
 done
+
+# Download 1000Genomes genotype data (VCF and index file), for X chromosome
+wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chrX.phase3_shapeit2_mvncall_integrated_v1c.20130502.genotypes.vcf.gz
+wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chrX.phase3_shapeit2_mvncall_integrated_v1c.20130502.genotypes.vcf.gz.tbi
 
 # Download file with sample information
 wget https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/integrated_call_samples_v3.20130502.ALL.panel 

@@ -53,7 +53,16 @@ Jodi_notes.txt
 
 05_GWAS/*
 
-# # BUT keep all .sh scripts and .md files and .R scripts
+# BUT keep all .sh scripts and .md files and .R scripts
 !05_GWAS/*.sh
 !05_GWAS/*.md
 !05_GWAS/*.R
+
+
+### Clumping ###
+
+# Ignore everything inside 06_Clumping/
+
+# BUT keep all .sh scripts and .md files
+!06_Clumping/*.sh
+!06_Clumping/*.md
