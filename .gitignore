@@ -63,6 +63,8 @@ Jodi_notes.txt
 
 # Ignore everything inside 06_Clumping/
 
+06_Clumping/*
+
 # BUT keep all .sh scripts and .md files
 !06_Clumping/*.sh
 !06_Clumping/*.md
