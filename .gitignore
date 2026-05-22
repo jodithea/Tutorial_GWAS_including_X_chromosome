@@ -14,7 +14,7 @@ Tutorial_flow_diagram_overview.png
 !01_Data/*.sh
 
 # BUT keep phenotype file
-!01_Data/Tutorial_phenotype_data/pheno.txt
+!01_Data/Tutorial_phenotype_data/
 
 
 ### QC ###
