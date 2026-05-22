@@ -1,20 +1,20 @@
 # Ignore notes to myself file
 Jodi_notes.txt
 
+# Ignore PDF of flow diagram
+Tutorial_flow_diagram_overview.png
 
-### GENOTPE DATA ###
+### DATA ###
 
-# Ignore everything inside 01_Genotype_Data/
-01_Genotype_Data/*
+# Ignore everything inside 01_Data/
+01_Data/*
 
-# BUT keep 01_Download_genotype_data_for_tutorial.md
-!01_Genotype_Data/01_Download_genotype_data_for_tutorial.md
+# BUT keep markdown files and scripts
+!01_Data/*.md
+!01_Data/*.sh
 
-
-### PHENOTYPE DATA ###
-
-# Ignore everything in 01_Phenotype_Data/Making_phenotype_data/
-01_Phenotype_Data/Making_phenotype_data/
+# BUT keep phenotype file
+!01_Data/Tutorial_phenotype_data/pheno.txt
 
 
 ### QC ###

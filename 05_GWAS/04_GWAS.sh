@@ -23,7 +23,7 @@ sparseGRM=Sparse_GRM_autosomes
 list_ancestry_individuals=04_Ancestry_Checks/PCA_data/EUR_IDs_5SD.txt
 # Phenotype file in format FID IID phenotype. No headers. For binary phenotypes use cases = 1, controls = 0
 # This phenotype file is provided as part of the tutorial in the directory '01_Phenotype_Data'
-pheno=01_Phenotype_Data/pheno.txt
+pheno=01_Data/Tutorial_phenotype_data/pheno.txt
 # Quantitative covariate file in format FID IID quantitative_covars - e.g. FID IID PC1 PC2 PC3 PC4. No headers.
 qcovar=05_GWAS/Files_for_GWAS/qcovar_PCs.txt
 # Categorical covariate file in format FID IID categorical_covars - e.g. FID IID Sex. No headers.

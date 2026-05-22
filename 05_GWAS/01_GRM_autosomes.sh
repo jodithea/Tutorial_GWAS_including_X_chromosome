@@ -30,7 +30,7 @@ mkdir 05_GWAS/GRM/
 
 # 1) Filter autosomal directly genotyped SNPs (i.e. before imputation)
 # Filter on MAF of 0.01, geno 0.02, mind 0.02, hwe 0.0000000001 and LD pruning:  window size = 1500kb; step size (variant ct) = 150; r^2 threshold = 0.2
-plink --bfile 01_Genotype_Data/Genotypes_all_chr \
+plink --bfile 01_Data/Tutorial_genotype_data/Genotypes_all_chr \
  --chr 1-22 \
  --maf 0.01 \
  --geno 0.02 \
@@ -46,7 +46,7 @@ plink --bfile 01_Genotype_Data/Genotypes_all_chr \
 
 # 2) Now create GRM using this filtered set of autosomal SNPs, using European individuals only
 gcta-1.94.1 \
- --bfile 01_Genotype_Data/Genotypes_all_chr \
+ --bfile 01_Data/Tutorial_genotype_data/Genotypes_all_chr \
  --keep ${list_ancestry_individuals} \
  --extract 05_GWAS/GRM/Directly_genotyped_SNPs_filtered_autosomes.prune.in \
  --make-grm  \

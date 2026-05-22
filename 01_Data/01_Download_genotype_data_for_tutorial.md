@@ -11,7 +11,11 @@ The genotype data to use in this tutorial has been archived on Zenodo and assign
 # Update to point to location where you are doing this tutorial
 directory=/path/Tutorial_GWAS_including_X_chromosome/
 
-cd ${directory}01_Genotype_Data
+cd ${directory}
+
+mkdir -p 01_Data/Tutorial_genotype_data/
+
+cd 01_Data/Tutorial_genotype_data/
 
 wget https://zenodo.org/records/17796418/files/tutorial_genotype_data.zip?download=1/tutorial_genotype_data.zip \
   -O tutorial_genotype_data.zip

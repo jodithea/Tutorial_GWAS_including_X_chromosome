@@ -48,6 +48,6 @@ plink --bfile 02_QC/Wrayner_preimputation_checking/Genotypes_all_chr_QCed_mergeX
 perl 02_QC/Wrayner_preimputation_checking/HRC-1000G-check-bim.pl \
  -b 02_QC/Wrayner_preimputation_checking/Genotypes_all_chr_QCed_mergeX.bim \
  -f 02_QC/Wrayner_preimputation_checking/Genotypes_all_chr_QCed_mergeX_freq.frq \
- -r 02_QC/HRC_data/HRC.r1-1.GRCh37.wgs.mac5.sites.tab \
+ -r 01_Data/HRC_data/HRC.r1-1.GRCh37.wgs.mac5.sites.tab \
  -h
 

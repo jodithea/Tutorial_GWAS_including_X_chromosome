@@ -49,7 +49,7 @@ threshold <- as.numeric(Sys.getenv("threshold"))
 pca <- read.table(file.path(dir, "04_Ancestry_Checks/PCA_data/Genotypes_study_and_1000G_autosomes_filtered_pca.eigenvec"), header = FALSE)
 colnames(pca) <- c("FID", "IID", paste0("PC", 1:20))
 
-sample_info_1000G <- read.table(file.path(dir, "04_Ancestry_Checks/1000G_data/integrated_call_samples_v3.20130502.ALL.panel"), header = TRUE)
+sample_info_1000G <- read.table(file.path(dir, "01_Data/1000G_data/integrated_call_samples_v3.20130502.ALL.panel"), header = TRUE)
 
 # Merge datasets
 df <- pca %>%

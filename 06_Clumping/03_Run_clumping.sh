@@ -24,7 +24,7 @@ chr=$(basename "${ref_prefix}" | \
       sed 's|1000G_chr||' |
       sed 's|_GWASMarkername||')
 # Add filename of metadata of reference genotype data to determine individuals of chosen ancestry to keep (here, EUR)
-ref_metadata=04_Ancestry_Checks/1000G_data/integrated_call_samples_v3.20130502.ALL.panel
+ref_metadata=01_Data/1000G_data/integrated_call_samples_v3.20130502.ALL.panel
 
 ### Submit script ###
 

@@ -21,20 +21,20 @@ cd ${directory}
 
 
 # Split chromosome X
-plink --bfile 01_Genotype_Data/Genotypes_chrX \
+plink --bfile 01_Data/Tutorial_genotype_data/Genotypes_chrX \
  --split-x b37 \
  --make-bed \
- --out 01_Genotype_Data/Genotypes_chrX_split
+ --out 01_Data/Tutorial_genotype_data/Genotypes_chrX_split
 
 # Create list of all genotype data filenames
-> 01_Genotype_Data/list_merge_genotype_data.txt   # clear file
+> 01_Data/Tutorial_genotype_data/list_merge_genotype_data.txt   # clear file
 for i in {2..22}; do
-  echo "01_Genotype_Data/Genotypes_chr${i}" >> 01_Genotype_Data/list_merge_genotype_data.txt
+  echo "01_Data/Tutorial_genotype_data/Genotypes_chr${i}" >> 01_Data/Tutorial_genotype_data/list_merge_genotype_data.txt
 done
-echo "01_Genotype_Data/Genotypes_chrX_split" >> 01_Genotype_Data/list_merge_genotype_data.txt
+echo "01_Data/Tutorial_genotype_data/Genotypes_chrX_split" >> 01_Data/Tutorial_genotype_data/list_merge_genotype_data.txt
 
 # Merge genotype data files from all chromosomes into one
-plink --bfile 01_Genotype_Data/Genotypes_chr1 \
- --merge-list 01_Genotype_Data/list_merge_genotype_data.txt \
+plink --bfile 01_Data/Tutorial_genotype_data/Genotypes_chr1 \
+ --merge-list 01_Data/Tutorial_genotype_data/list_merge_genotype_data.txt \
  --make-bed \
- --out 01_Genotype_Data/Genotypes_all_chr
+ --out 01_Data/Tutorial_genotype_data/Genotypes_all_chr

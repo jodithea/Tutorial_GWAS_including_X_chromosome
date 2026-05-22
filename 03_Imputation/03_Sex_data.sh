@@ -19,4 +19,4 @@ directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 cd ${directory}03_Imputation/Genotype_imputation_results/
 
-awk '{print $1,$2,$5}' ${directory}01_Genotype_Data/Genotypes_all_chr.fam > sex_data.txt
+awk '{print $1,$2,$5}' ${directory}01_Data/Tutorial_genotype_data/Genotypes_all_chr.fam > sex_data.txt

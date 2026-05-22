@@ -27,7 +27,7 @@ mkdir -p 04_Ancestry_Checks/Merged_study_and_1000G/
 
 # 1) Merge tutorial genotype data with 1000G refernece genotype data
 plink --bfile 02_QC/Wrayner_preimputation_checking/Genotypes_all_chr_QCed_mergeX-updated-chr${chr} \
- --bmerge 04_Ancestry_Checks/1000G_data/Duplicates_removed/Plink_format/chr${chr} \
+ --bmerge 01_Data/1000G_data/Duplicates_removed/Plink_format/chr${chr} \
  --make-bed \
  --out 04_Ancestry_Checks/Merged_study_and_1000G/Genotypes_study_and_1000G_chr${chr}
 

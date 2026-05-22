@@ -28,7 +28,7 @@ mkdir 02_QC/Lists/
 
 # 1) Remove samples with low call rate < 95%
 # Do this as the first step so following QC steps aren't biased by poor samples
-plink --bfile 01_Genotype_Data/Genotypes_all_chr \
+plink --bfile 01_Data/Tutorial_genotype_data/Genotypes_all_chr \
  --mind 0.05 \
  --make-bed \
  --out 02_QC/Genotype_checks/Genotypes_all_chr_sampleqc1

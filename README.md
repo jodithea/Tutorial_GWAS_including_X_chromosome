@@ -10,6 +10,12 @@
 
 **Note: This repository is a work in progress. All core content is available, but I am currently refining and reorganinsing the tutorial, and developing a summary flow diagram.**
 
+# Overview of Tutorial
+
+![Tutorial flow overview. Numbering used matches that used in directory and file names.](images/tutorial_flow_diagram_overview.png)
+
+
+
 # Getting Started
 
 ## Clone the repository

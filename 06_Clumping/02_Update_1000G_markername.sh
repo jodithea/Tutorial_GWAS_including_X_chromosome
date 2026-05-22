@@ -20,7 +20,7 @@ directory=/path/Tutorial_GWAS_including_X_chromosome/
 # Update to filename of GWAS summary statistics which you want to use for clumping
 GWAS_sumstats=${directory}05_GWAS/GWAS/GWAS_autosomes_X_fulldc.txt
 # Add filename of reference genotype data, here we are using 1000 Genomes Phase 3 as downloaded and tidied in this tutorial
-ref=(${directory}04_Ancestry_Checks/1000G_data/Duplicates_removed/Plink_format/chr*.bim)
+ref=(${directory}01_Data/1000G_data/Duplicates_removed/Plink_format/chr*.bim)
 ref_prefix=${ref[${PBS_ARRAY_INDEX}]%.bim}
 chr=$(basename "${ref_prefix}" | \
       sed 's|chr||')

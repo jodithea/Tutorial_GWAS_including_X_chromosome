@@ -39,7 +39,7 @@ plink --bfile 04_Ancestry_Checks/Merged_study_and_1000G/Genotypes_study_and_1000
 
 # 4) Create files with PCA data for only the tutorial data (filter out the 1000 Genomes individuals)
 #  Create file with all individuals from our tutorial genotype data 
-awk '{print $1,$2}' 01_Genotype_Data/Genotypes_all_chr.fam > 04_Ancestry_Checks/PCA_data/study_samples.txt
+awk '{print $1,$2}' 01_Data/Genotypes_all_chr.fam > 04_Ancestry_Checks/PCA_data/study_samples.txt
 
 # Filter .eigenvec file to only include our tutorial individuals
 awk 'NR==FNR {ids[$1 FS $2]; next} ($1 FS $2) in ids' \
