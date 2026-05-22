@@ -12,7 +12,7 @@
 
 # Overview of Tutorial
 
-![Tutorial flow overview. Numbering used matches that used in directory and file names.](images/tutorial_flow_diagram_overview.png)
+![Tutorial flow overview. Numbering used matches that used in directory and file names.](Tutorial_flow_diagram_overview.png)
 
 
 
