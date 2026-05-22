@@ -8,11 +8,15 @@
 	- Clumping to identify independent genome-wide significant SNPs
 * Example genotype data is provided to use with this tutorial, or you can follow the workflow using your own genotype data
 
-**Note: This repository is a work in progress. All core content is available, but I am currently refining and reorganinsing the tutorial, and developing a summary flow diagram.**
+**Note: This repository is a work in progress. All core content is available, but I have just reorganised some scripts and still need to test everything still runs correctly.**
+
 
 # Overview of Tutorial
 
-![Tutorial flow overview. Numbering used matches that used in directory and file names.](Tutorial_flow_diagram_overview.png)
+* The flow diagram below gives an overview of the entire tutorial
+* Note that the numbering used in the diagram aligns with the numbering used to name the directories and files
+
+![Tutorial flow overview.](Tutorial_flow_diagram_overview.png)
 
 
 
