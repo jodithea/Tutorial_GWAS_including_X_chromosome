@@ -19,8 +19,9 @@ module load GCTA/1.94.1
 # Update to point to location where you are doing this tutorial
 directory=/path/Tutorial_GWAS_including_X_chromosome/
 # Add filename including the list of individuals within your ancestry of interes, as created in 04_Ancestry_Checks
-list_ancestry_individuals=04_Ancestry_Checks/PCA_data/EUR_IDs_3SD.txt
-
+list_ancestry_individuals=04_Ancestry_Checks/PCA_data/EUR_IDs_5SD.txt
+# Add filename for data files containing autosomal directly genotyped SNPs (i.e. before imputation)
+directly_genotyped=01_Data/Tutorial_genotype_data/Genotypes_all_chr
 
 ### Submit script ###
 
@@ -30,7 +31,7 @@ mkdir 05_GWAS/GRM/
 
 # 1) Filter autosomal directly genotyped SNPs (i.e. before imputation)
 # Filter on MAF of 0.01, geno 0.02, mind 0.02, hwe 0.0000000001 and LD pruning:  window size = 1500kb; step size (variant ct) = 150; r^2 threshold = 0.2
-plink --bfile 01_Data/Tutorial_genotype_data/Genotypes_all_chr \
+plink --bfile ${directly_genotyped} \
  --chr 1-22 \
  --maf 0.01 \
  --geno 0.02 \
@@ -46,7 +47,7 @@ plink --bfile 01_Data/Tutorial_genotype_data/Genotypes_all_chr \
 
 # 2) Now create GRM using this filtered set of autosomal SNPs, using European individuals only
 gcta-1.94.1 \
- --bfile 01_Data/Tutorial_genotype_data/Genotypes_all_chr \
+ --bfile ${directly_genotyped} \
  --keep ${list_ancestry_individuals} \
  --extract 05_GWAS/GRM/Directly_genotyped_SNPs_filtered_autosomes.prune.in \
  --make-grm  \

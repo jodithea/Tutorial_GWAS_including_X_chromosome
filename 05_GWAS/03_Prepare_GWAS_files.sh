@@ -35,4 +35,4 @@ awk '{print $1,$2,$3,$4,$5,$6}' 04_Ancestry_Checks/PCA_data/Genotypes_study_filt
 # 3) Create covar file = Categorical covariate file
 # In format FID IID categorical_covars with no headers
 # Here we are doing FID IID Sex
-awk '{print $1,$2,$5}' 03_Imputation/Genotype_imputation_results/all_chr_filtered.fam > 05_GWAS/Files_for_GWAS/covar_sex.txt
+awk '{print $1,$2,$5}' 03_Imputation/Genotype_imputation_results/chr1_filtered.fam > 05_GWAS/Files_for_GWAS/covar_sex.txt

@@ -1,6 +1,9 @@
 # Ignore notes to myself file
 Jodi_notes.txt
 
+# Ignore Zenodo archive files
+Zenodo/
+
 ### DATA ###
 
 # Ignore everything inside 01_Data/
@@ -43,6 +46,9 @@ Jodi_notes.txt
 !04_Ancestry_Checks/*.sh
 !04_Ancestry_Checks/*.md
 
+# And keep PCA data needed to run GWAS
+!04_Ancestry_Checks/PCA_data/EUR_IDs_5SD.txt
+!04_Ancestry_Checks/PCA_data/Genotypes_study_filtered_pca.eigenvec
 
 ### GWAS ###
 
@@ -65,3 +71,5 @@ Jodi_notes.txt
 # BUT keep all .sh scripts and .md files
 !06_Clumping/*.sh
 !06_Clumping/*.md
+
+
