@@ -39,14 +39,19 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 ## Option 1: Start from raw genotype data (full workflow)
 
 * Use this if you want to run the tutorial from the beginning
-* Download the Zenodo archive which containe the raw genotype data
+* Download the Zenodo archive which contains the raw genotype data
 	* Instructions in 01_Data/01_Download_raw_genotype_data_for_full_tutorial.md
+	* Zenodo archive: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17796418.svg)](https://doi.org/10.5281/zenodo.17796418)
+* Start with directory 01_Data/ then continue through directories in order
 
 ## Option 2: Conduct a GWAS only
 
 * Use this if you want to skip genotype QC, imputation, and ancestry checks.
 * Download the Zenodo archive which contains all data needed to run the GWAS without carrying out the previous QC, imputation, and ancestry checks
 	* Instructions in 01_Data/02_Download_data_for_GWAS.md
+	* Zenodo archive: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17796418.svg)](https://doi.org/10.5281/zenodo.17796418)
+* Start with directory 01_Data/ then skip to directory 05_GWAS/
+
 
 ## Software needed
 
