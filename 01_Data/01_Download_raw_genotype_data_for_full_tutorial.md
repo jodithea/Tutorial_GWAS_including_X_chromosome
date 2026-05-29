@@ -1,6 +1,6 @@
 # Download raw genotype data to run the full tutorial from the beginning
 
-The genotype data to use in this tutorial has been archived on Zenodo and assigned a DOI: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17796418.svg)](https://doi.org/10.5281/zenodo.17796418)
+The genotype data to use in this tutorial has been archived on Zenodo and assigned a DOI: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17796417.svg)](https://doi.org/10.5281/zenodo.17796417)
 
 
 * On most HPC clusters the compute nodes have no outbound internet access so downloading these files within an interactive session or with a script will fail to find these files
