@@ -14,9 +14,9 @@ directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 cd ${directory}
 
-mkdir -p 04_Ancestry_Checks/1000G_data/
+mkdir -p 01_Data/1000G_data/
 
-cd 04_Ancestry_Checks/1000G_data/
+cd 01_Data/1000G_data/
 
 # Download 1000Genomes genotype data (VCF and index files), for autosomes
 # Latest release = Phase 3 20130502

@@ -15,7 +15,7 @@ module load plink/1.90b7
 # Update to point to location where you are doing this tutorial
 directory=/path/Tutorial_GWAS_including_X_chromosome/
 
-vcf=(${directory}04_Ancestry_Checks/1000G_data/ALL.chr*.phase3_shapeit2_mvncall_integrated_v*.20130502.genotypes.vcf.gz)
+vcf=(${directory}01_Data/1000G_data/ALL.chr*.phase3_shapeit2_mvncall_integrated_v*.20130502.genotypes.vcf.gz)
 chr=$(basename "${vcf[${PBS_ARRAY_INDEX}]}" | \
       sed 's|ALL.chr||' | \
       sed 's|.phase3_shapeit2_mvncall_integrated_v[0-9A-Za-z.]*.20130502.genotypes.vcf.gz||')
@@ -24,10 +24,10 @@ chr=$(basename "${vcf[${PBS_ARRAY_INDEX}]}" | \
 
 cd ${directory}
 
-mkdir -p 04_Ancestry_Checks/1000G_data/Duplicates_removed/
-mkdir -p 04_Ancestry_Checks/1000G_data/Duplicates_removed/Plink_format/
+mkdir -p 01_Data/1000G_data/Duplicates_removed/
+mkdir -p 01_Data/1000G_data/Duplicates_removed/Plink_format/
 
-cd 04_Ancestry_Checks/1000G_data/
+cd 01_Data/1000G_data/
 
 # 1) Remove duplicates 
 # Some chromosomes have duplicate variants (same chr, position, ref and alt alleles - not just multiallelic)
