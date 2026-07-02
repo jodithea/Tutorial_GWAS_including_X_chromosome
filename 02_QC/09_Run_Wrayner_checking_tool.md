@@ -4,7 +4,7 @@
 
 * Now we want to run this shell script which creates a series of command files to do the following:
 	- Exclude SNPs that do not match on chromosome, position, and alleles (including multi-allelic variants)
-	- Exclude SNPs not present in the reference panel \
+	- Exclude SNPs not present in the reference panel 
 	- Update chromosome and position to match the reference panel
 	- Align the scaffold to the forward strand
 	- Fix REF alleles to the reference panel

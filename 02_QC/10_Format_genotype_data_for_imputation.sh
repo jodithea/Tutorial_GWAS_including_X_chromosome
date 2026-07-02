@@ -12,7 +12,7 @@ module load vcftools/0.1.16
 
 ### Preamble ###
 
-# # Update to point to location where you are doing this tutorial
+# Update to point to location where you are doing this tutorial
 directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 ### Submit script ###
