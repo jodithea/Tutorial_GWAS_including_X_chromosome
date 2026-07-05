@@ -29,15 +29,18 @@ mkdir -p 01_Data/1000G_data/Duplicates_removed/Plink_format/
 
 cd 01_Data/1000G_data/
 
-# 1) Remove duplicates 
+# 1) Remove duplicates
 # Some chromosomes have duplicate variants (same chr, position, ref and alt alleles - not just multiallelic)
 # This causes an error when creating variant IDs
 # So first remove these duplicate variants from vcf files
 (
   zcat ${vcf[${PBS_ARRAY_INDEX}]} | grep '^#'
   zcat ${vcf[${PBS_ARRAY_INDEX}]} | grep -v '^#' \
-    | LC_ALL=C sort -t $'\t' -k1,1 -k2,2n -k4,4 \
-    | awk -F"\t" 'BEGIN{prev=""} {key=$1"\t"$2"\t"$4; if(key==prev) next; print; prev=key;}'
+    | awk -F"\t" '
+      {
+        key=$1"\t"$2"\t"$4
+        if(!seen[key]++) print
+      }'
 ) > Duplicates_removed/chr${chr}_dedup.vcf
 
 # 2) Convert VCF to PLINK bed/bim/fam format
@@ -47,5 +50,4 @@ plink --vcf Duplicates_removed/chr${chr}_dedup.vcf \
  --set-missing-var-ids @:#:\$1:\$2 \
  --make-bed \
  --out Duplicates_removed/Plink_format/chr${chr}
-
 
