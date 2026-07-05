@@ -36,7 +36,7 @@ output=GWAS
 
 cd ${directory}
 
-mkdir 05_GWAS/GWAS/
+mkdir -p 05_GWAS/GWAS/
 
 # 1)  Save the estimated fastGWA model parameters from an analysis for a binary outcome with the autosomes, restricted to European ancestry only
 gcta-1.94.1 --mbfile ${directory}05_GWAS/Files_for_GWAS/list_autosomes_genotype_data.txt \

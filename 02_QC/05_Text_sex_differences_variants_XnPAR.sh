@@ -19,7 +19,7 @@ directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 cd ${directory}
 
-mkdir 02_QC/Plots/
+mkdir -p 02_QC/Plots/
 
 # 1) Create file with FID, IID, Sex to use as an input to stratify plink estimates by sex
 awk '{print $1,$2,$5}' 02_QC/Genotype_checks/Genotypes_XnPAR_variantqc1.fam \

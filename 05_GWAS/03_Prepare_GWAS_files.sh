@@ -17,7 +17,7 @@ directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 cd ${directory}
 
-mkdir 05_GWAS/Files_for_GWAS/
+mkdir -p 05_GWAS/Files_for_GWAS/
 
 # 1) Create list of the imputed and filtered genotype filenames for the autosomes
 > 05_GWAS/Files_for_GWAS/list_autosomes_genotype_data.txt   # clear file

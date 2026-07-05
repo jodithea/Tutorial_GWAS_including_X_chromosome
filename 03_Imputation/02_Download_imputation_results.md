@@ -20,7 +20,7 @@ directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 cd ${directory}
 
-mkdir 03_Imputation/Genotype_imputation_results/
+mkdir -p 03_Imputation/Genotype_imputation_results/
 
 cd 03_Imputation/Genotype_imputation_results/
 ```

@@ -18,7 +18,7 @@ directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 cd ${directory}
 
-mkdir ${directory}04_Ancestry_Checks/PCA_data/
+mkdir -p ${directory}04_Ancestry_Checks/PCA_data/
 
 # 1) Create list of all genotype data filenames
 > 04_Ancestry_Checks/Merged_study_and_1000G/list_merge_genotype_data.txt   # clear file

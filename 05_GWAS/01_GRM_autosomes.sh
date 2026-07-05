@@ -27,7 +27,7 @@ directly_genotyped=01_Data/Tutorial_genotype_data/Genotypes_all_chr
 
 cd ${directory}
 
-mkdir 05_GWAS/GRM/
+mkdir -p 05_GWAS/GRM/
 
 # 1) Filter autosomal directly genotyped SNPs (i.e. before imputation)
 # Filter on MAF of 0.01, geno 0.02, mind 0.02, hwe 0.0000000001 and LD pruning:  window size = 1500kb; step size (variant ct) = 150; r^2 threshold = 0.2

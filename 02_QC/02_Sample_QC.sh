@@ -23,8 +23,8 @@ directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 cd ${directory}
 
-mkdir 02_QC/Genotype_checks/
-mkdir 02_QC/Lists/
+mkdir -p 02_QC/Genotype_checks/
+mkdir -p 02_QC/Lists/
 
 # 1) Remove samples with low call rate < 95%
 # Do this as the first step so following QC steps aren't biased by poor samples

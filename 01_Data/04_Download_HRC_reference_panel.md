@@ -12,7 +12,7 @@ directory=/path/Tutorial_GWAS_including_X_chromosome/
 
 cd ${directory}
 
-mkdir 01_Data/HRC_data/
+mkdir -p 01_Data/HRC_data/
 
 cd 01_Data/HRC_data/
 
