@@ -1,11 +1,12 @@
 #!/bin/bash
-#PBS -l walltime=00:30:00
+#PBS -l walltime=01:30:00
 #PBS -l mem=5GB
 #PBS -l ncpus=1
 #PBS -J 0-22
 
 # This script converts the imputated genotype files to Plink format
-# Then filters variants on MAF and imputation score INFO
+# Then filters variants to only SNPs and filters on MAF and imputation score INFO
+# Note: Tutorial originally developed using Michigan Imputation Server v2.0.10. Testing under v2.0.11 identified duplicate variant records in some imputed VCFs, which were addressed by removing duplicate variants from the VCF files
 
 ### Environment ###
 
@@ -38,45 +39,56 @@ bcftools annotate \
   -O z -o chr${chr_num}_renamed.vcf.gz \
   chr${chr_num}.dose.vcf.gz
 
-# 3) Convert .dose.vcf.gz files to Plink bed/bim/fam files
-# Add sex data
+# 3) Remove duplicates
+# Some chromosomes have duplicate variants (same chr, position, ref and alt alleles - not just multiallelic)
+# This causes an error in PLINK filtering steps
+# So first remove these duplicate variants from vcf files
+(
+  zcat chr${chr_num}_renamed.vcf.gz | grep '^#'
+  zcat chr${chr_num}_renamed.vcf.gz | grep -v '^#' \
+    | awk -F"\t" '
+      {
+        key=$1"\t"$2"\t"$4"\t"$5
+        if(!seen[key]++) print
+      }'
+) > chr${chr_num}_renamed_dedup.vcf
+
+# 4) Convert renamed and deduplicated VCF files to Plink bed/bim/fam files
+# Also only retain SNPs (i.e. remove indels) and add sex data
 if [[ "$chr_num" == "X" ]]; then
-    plink --vcf chr${chr_num}_renamed.vcf.gz \
+    plink --vcf chr${chr_num}_renamed_dedup.vcf \
           --update-sex sex_data.txt \
+          --snps-only just-acgt \
           --split-x b37 \
           --make-bed \
-          --out chr${chr_num}_renamed
+          --out chr${chr_num}_renamed_dedup
 
 else
-    plink --vcf chr${chr_num}_renamed.vcf.gz \
+    plink --vcf chr${chr_num}_renamed_dedup.vcf \
           --update-sex sex_data.txt \
+          --snps-only just-acgt \
           --make-bed \
-          --out chr${chr_num}_renamed
+          --out chr${chr_num}_renamed_dedup
 fi
 
-# 4) Create a file with imputation score INFO
-zcat chr${chr_num}.info.gz \
-| awk '
-!/^#/ {
-    # Extract R2 from INFO column
-    split($8, info, ";");
-    r2 = "NA";
-    for(i in info){
-        if (info[i] ~ /^R2=/){
-            r2 = substr(info[i], 4);
-        }
-    }
+# 5) Create a file with imputation score INFO
+# Use deduplicated VCF files to extract INFO score
 
-    # Make new variant ID to match as above
-    id = $1 ":" $2 ":" $4 ":" $5;
+grep -v '^#' chr${chr_num}_renamed_dedup.vcf | \
+awk '
+{
+    split($8, info, ";")
+    for(i in info)
+        if(info[i] ~ /^R2=/)
+            r2 = substr(info[i],4)
 
-    print id, r2;
+    print $1 ":" $2 ":" $4 ":" $5, r2
 }' > chr${chr_num}_info.txt
 
-# 5) Filter genotype data based on MAF > 0.01 and imputation quality scores in chr${chr}_info.txt file, Rsq>0.8.
+# 6) Filter genotype data based on MAF > 0.01 and imputation quality scores in chr${chr}_info.txt file, Rsq>0.8.
 # For X chr create separate PLINK file sets for X chr nPAR and X chr PAR
 if [[ "$chr_num" == "X" ]]; then
-    plink --bfile chr${chr_num}_renamed \
+    plink --bfile chr${chr_num}_renamed_dedup \
       --qual-scores chr${chr_num}_info.txt 2 1 \
       --qual-threshold 0.8 \
       --maf 0.01 \
@@ -96,11 +108,10 @@ if [[ "$chr_num" == "X" ]]; then
           --out chr${chr_num}_PAR_filtered
 
 else
-    plink --bfile chr${chr_num}_renamed \
+    plink --bfile chr${chr_num}_renamed_dedup \
      --qual-scores chr${chr_num}_info.txt 2 1 \
      --qual-threshold 0.8 \
      --maf 0.01 \
      --make-bed \
      --out chr${chr_num}_filtered
-fi 
-
+fi
