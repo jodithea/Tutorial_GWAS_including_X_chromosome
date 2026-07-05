@@ -48,11 +48,11 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 
 * Use this if you want to skip genotype QC, imputation, and ancestry checks
 * Start with directory 01_Data/
-	* Follow inctrsuctions in 02_Download_data_for_GWAS.md to download data needed to run the GWAS without carrying out the previous QC, imputation, and ancestry checks
+	* Follow instructions in 01_Data/02_Download_data_for_GWAS.md to download data needed to run the GWAS without carrying out the previous QC, imputation, and ancestry checks
 		* This downloads the file Tutorial_GWAS_including_X_chromosome_start_at_GWAS.tar.gz from the Zenodo archive: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17796417.svg)](https://doi.org/10.5281/zenodo.17796417)
-	* Read 03_Info_about_phenotype_data_for_tutorial.md to understand what phenotype data is used in the GWAS	
-	* Follow instructions in 05_a_Download_1000G_reference_data.md to download the 1000 Genomes Phase 3 genotype data
-	* Run the script 05_b_Tidy_1000G_reference_data.sh to tidy the downloaded 1000 Genomes data 
+	* Read 01_Data/03_Info_about_phenotype_data_for_tutorial.md to understand what phenotype data is used in the GWAS	
+	* Follow instructions in 01_Data/05_a_Download_1000G_reference_data.md to download the 1000 Genomes Phase 3 genotype data
+	* Run the script 01_Data/05_b_Tidy_1000G_reference_data.sh to tidy the downloaded 1000 Genomes data 
 * Then skip to directory 05_GWAS/ and follow chronologically
 
 
