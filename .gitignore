@@ -46,16 +46,6 @@ Zenodo/
 !04_Ancestry_Checks/*.sh
 !04_Ancestry_Checks/*.md
 
-# Re-open PCA_data folder (must exist in Git's view)
-!04_Ancestry_Checks/PCA_data/
-
-# Now ignore everything inside PCA_data
-04_Ancestry_Checks/PCA_data/*
-
-# But allow ONLY these two files
-!04_Ancestry_Checks/PCA_data/EUR_IDs_5SD.txt
-!04_Ancestry_Checks/PCA_data/Genotypes_study_filtered_pca.eigenvec
-
 
 ### GWAS ###
 
