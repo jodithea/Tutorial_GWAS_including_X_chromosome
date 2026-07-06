@@ -14,7 +14,7 @@ directory=/path/Tutorial_GWAS_including_X_chromosome/
 cd ${directory}
 
 # Download file
-wget https://zenodo.org/record/20438428/files/Tutorial_GWAS_including_X_chromosome_start_at_GWAS.tar.gz
+wget https://zenodo.org/record/21211341/files/Tutorial_GWAS_including_X_chromosome_start_at_GWAS.tar.gz
 
 # Extract files from tarred directory
 tar -xzvf Tutorial_GWAS_including_X_chromosome_start_at_GWAS.tar.gz --keep-old-files
