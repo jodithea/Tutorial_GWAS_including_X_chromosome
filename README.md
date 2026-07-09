@@ -39,7 +39,7 @@ git clone https://github.com/jodithea/Tutorial_GWAS_including_X_chromosome.git
 * Use this if you want to run the tutorial from the beginning
 * Download the Zenodo archive which contains the raw genotype data
 	* Instructions in 01_Data/01_Download_raw_genotype_data_for_full_tutorial.md
-	* This downlaods the file Tutorial_GWAS_including_X_chromosome_raw_genotype_data.tar.gz from the Zenodo archive: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17796417.svg)](https://doi.org/10.5281/zenodo.17796417)
+	* This downloads the file Tutorial_GWAS_including_X_chromosome_raw_genotype_data.tar.gz from the Zenodo archive: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17796417.svg)](https://doi.org/10.5281/zenodo.17796417)
 * Start with directory 01_Data/ then continue through directories in order
 
 ## Option 2: Conduct a GWAS only
@@ -246,4 +246,4 @@ chr=$(basename "${files[$SLURM_ARRAY_TASK_ID]}" .zip)
 # Disclaimer
 
 * This workshop is provided as-is without warranty of any kind. Users are responsible for verifying the workshop before use
-* If you spot any errors or issues, please get in touch — feedback is greatly appreciated
+* If you spot any errors or issues, please get in touch - feedback is greatly appreciated
